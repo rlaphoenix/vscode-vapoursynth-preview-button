@@ -1,0 +1,50 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "project": [
+            "./tsconfig.json"
+        ]
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "sonarjs"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "rules": {
+        "@typescript-eslint/naming-convention": "warn",
+        "@typescript-eslint/semi": "warn",
+        "curly": "warn",
+        "eqeqeq": "warn",
+        "no-throw-literal": "warn",
+        "semi": "off",
+        "comma-dangle": [
+            "warn",
+            {
+                "objects": "always-multiline",
+                "arrays": "always-multiline",
+                "exports": "always-multiline",
+                "imports": "always-multiline",
+                "functions": "always-multiline"
+            }
+        ],
+        "no-trailing-spaces": [
+            "warn",
+            {
+                "ignoreComments": false
+            }
+        ]
+    },
+    "ignorePatterns": [
+        "**/*.d.ts",
+        "node_modules/",
+        "build/**/*.js"
+    ]
+}

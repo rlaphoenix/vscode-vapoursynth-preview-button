@@ -1,0 +1,109 @@
+{
+  "name": "vapoursynth-preview-button",
+  "displayName": "VapourSynth Preview Button",
+  "description": "Adds a Preview button for vpy files in VSCode's Editor Action Group",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "publisher": "rlaphoenix",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/rlaphoenix/vapoursynth-preview-button#readme",
+  "icon": "images/package_icon.png",
+  "galleryBanner": {
+    "color": "#00838f",
+    "theme": "dark"
+  },
+  "bugs": {
+    "url": "https://github.com/rlaphoenix/vapoursynth-preview-button/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rlaphoenix/vapoursynth-preview-button.git"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "vapoursynth",
+    "preview",
+    "previewer",
+    "button",
+    "editor",
+    "editor title menu",
+    "editor action",
+    "vs-preview",
+    "vse-previewer"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "browser": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "VapourSynthPreview.open",
+        "category": "ShortcutMenuBar",
+        "title": "Preview this Script",
+        "icon": {
+          "dark": "images/eye_dark_18dp.png",
+          "light": "images/eye_light_18dp.png"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "editorLangId == python && resourceExtname == '.vpy'",
+          "command": "VapourSynthPreview.open",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "VapourSynthPreview.open",
+        "key": "Shift+Spacebar",
+        "mac": "Cmd+Shift+F"
+      }
+    ]
+  },
+  "menus": {},
+  "scripts": {
+    "compile": "webpack",
+    "latest": "yarn upgrade-interactive --latest",
+    "lint": "eslint src --ext ts",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "pretest": "yarn run test-compile && yarn run lint",
+    "test": "node ./out/test/runTest.js",
+    "test-watch": "tsc -watch -p ./",
+    "watch": "webpack --watch",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^15.12.4",
+    "@types/vscode": "^1.57.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "esbuild": "^0.14.32",
+    "eslint": "^7.29.0",
+    "eslint-plugin-sonarjs": "^0.8.0-125",
+    "glob": "^7.1.7",
+    "mocha": "^9.0.1",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.4",
+    "vscode-test": "^1.5.0",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "@material-ui/icons": "^4.11.3"
+  }
+}
