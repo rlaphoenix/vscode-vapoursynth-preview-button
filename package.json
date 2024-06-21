@@ -2,24 +2,24 @@
   "name": "vapoursynth-preview-button",
   "displayName": "VapourSynth Preview Button",
   "description": "Adds a Preview button for vpy files in VSCode's Editor Action Group",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.75.0"
   },
   "publisher": "rlaphoenix",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/rlaphoenix/vapoursynth-preview-button#readme",
+  "homepage": "https://github.com/rlaphoenix/vscode-vapoursynth-preview-button#readme",
   "icon": "images/package_icon.png",
   "galleryBanner": {
     "color": "#00838f",
     "theme": "dark"
   },
   "bugs": {
-    "url": "https://github.com/rlaphoenix/vapoursynth-preview-button/issues"
+    "url": "https://github.com/rlaphoenix/vscode-vapoursynth-preview-button/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rlaphoenix/vapoursynth-preview-button.git"
+    "url": "https://github.com/rlaphoenix/vscode-vapoursynth-preview-button.git"
   },
   "categories": [
     "Programming Languages",
